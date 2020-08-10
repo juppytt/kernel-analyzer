@@ -53,6 +53,8 @@ static inline bool isFunctionPointerOrVoid(llvm::Type *Ty) {
 }
 
 static inline std::string getScopeName(const llvm::GlobalValue *GV) {
+	//if (!GV)
+	//	return "";
 	if (llvm::GlobalValue::isExternalLinkage(GV->getLinkage()))
 		return GV->getName();
 	else {

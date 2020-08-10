@@ -459,7 +459,7 @@ void LinuxSS::collectRetVal(Value *V, BasicBlock *BB, RetSet &RS, ValueSet &Visi
             WorkList.push_back(*OI);
     }
 #else
-    LSS_DEBUG("unsupported op: " << *U << "\n");
+    LSS_DEBUG("unsupported op: " << *U << ", Type: " << *U->getType() << "\n");
     RS.insert(std::make_pair(U, BB));
 #endif
 
